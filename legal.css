@@ -1,0 +1,174 @@
+:root {
+  color-scheme: dark;
+  --bg: #090720;
+  --panel: rgba(18, 13, 49, 0.92);
+  --panel-soft: rgba(255, 255, 255, 0.055);
+  --line: rgba(231, 214, 255, 0.18);
+  --line-strong: rgba(255, 202, 244, 0.34);
+  --text: #fff7ff;
+  --muted: #d0c5f6;
+  --soft: #a99be3;
+  --accent: #ff9de9;
+  --accent-2: #9edcff;
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(255, 157, 233, 0.18), transparent 28%),
+    radial-gradient(circle at 86% 12%, rgba(158, 220, 255, 0.13), transparent 24%),
+    linear-gradient(180deg, #100a3d 0%, #07051d 100%);
+}
+
+a {
+  color: inherit;
+}
+
+.document-shell {
+  width: min(880px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 56px;
+}
+
+.document-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 18px;
+}
+
+.service-name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.document-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.document-header a {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 8px 10px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.document-header a:hover,
+.document-header a[aria-current="page"] {
+  border-color: var(--line-strong);
+  color: var(--text);
+  background: var(--panel-soft);
+}
+
+.document-card {
+  margin-top: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: clamp(24px, 5vw, 52px);
+  background: var(--panel);
+  box-shadow: 0 24px 80px rgba(2, 1, 15, 0.36);
+}
+
+.document-title {
+  max-width: 720px;
+}
+
+.document-title p {
+  margin: 0;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.document-title h1 {
+  margin: 8px 0 0;
+  font-size: clamp(32px, 6vw, 56px);
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.document-title span {
+  display: block;
+  margin-top: 14px;
+  color: var(--soft);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+section {
+  margin-top: 34px;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(20px, 3vw, 28px);
+  line-height: 1.35;
+}
+
+p,
+li {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+p {
+  margin: 12px 0 0;
+}
+
+ul {
+  display: grid;
+  gap: 10px;
+  margin: 14px 0 0;
+  padding-left: 1.4em;
+}
+
+strong {
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  .document-shell {
+    width: calc(100% - 20px);
+    padding-top: 16px;
+  }
+
+  .document-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .document-header nav {
+    width: 100%;
+  }
+
+  .document-header a {
+    padding-inline: 0;
+  }
+
+  .document-card {
+    padding: 22px;
+  }
+}
